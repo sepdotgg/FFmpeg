@@ -44,3 +44,19 @@ GPL. Please refer to the LICENSE file for detailed information.
 Patches should be submitted to the ffmpeg-devel mailing list using
 `git format-patch` or `git send-email`. Github pull requests should be
 avoided because they are not part of our review process and will be ignored.
+
+# Compiling for Warcraft Recorder (Linux)
+```
+./configure \
+  --enable-gpl \
+  --enable-libx264 \
+  --enable-libopus \
+  --enable-shared \
+  --enable-static \
+  --disable-sndio \
+  --enable-libspeex \
+  --extra-cflags="-fPIC" \
+  --extra-cxxflags="-fPIC" \
+  --prefix=$PWD/build
+```
+
