@@ -58,5 +58,11 @@ avoided because they are not part of our review process and will be ignored.
   --extra-cflags="-fPIC" \
   --extra-cxxflags="-fPIC" \
   --prefix=$PWD/build
+
+# Disable isatty to avoid seccomp sandbox crashes in Electron
+sed -i 's/#define HAVE_ISATTY 1/#define HAVE_ISATTY 0/' config.h
+
+make -j$(nproc)
+make install
 ```
 
