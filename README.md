@@ -53,8 +53,7 @@ avoided because they are not part of our review process and will be ignored.
   --enable-shared \
   --enable-static \
   --disable-sndio \
-  --enable-libspeex \
-  --extra-cflags="-fPIC" \
+  --extra-cflags="-fPIC -include $PWD/glibc-compat.h" \
   --extra-cxxflags="-fPIC" \
   --prefix=$PWD/build
 
